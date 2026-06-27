@@ -89,30 +89,30 @@
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                                 <div>
                                     <label>Patient ID</label>
-                                    <input placeholder="e.g. PT-1042" name="patient_id" type="text" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
+                                    <input value="PT-1042" placeholder="e.g. PT-1042" name="patient_id" type="text" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
                                 </div>
                                 <div>
                                     <label>Diagnosis</label>
-                                    <input placeholder="e.g. Type 2 Diabetes" name="diagnosis" type="text" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
+                                    <input value="Type 2 Diabetes" placeholder="e.g. Type 2 Diabetes" name="diagnosis" type="text" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
                                 </div>
                             </div>
 
                             <label style="margin-top: 10px; display: block;">Medication</label>
-                            <input placeholder="e.g. Metformin 500mg" name="medication" type="text" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
+                            <input value="Metformin 500mg" placeholder="e.g. Metformin 500mg" name="medication" type="text" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
 
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
                                 <div>
                                     <label>Dosage Instructions</label>
-                                    <input placeholder="e.g. Twice daily after meals" name="dosage" type="text" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
+                                    <input value="Twice daily after meals" placeholder="e.g. Twice daily after meals" name="dosage" type="text" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
                                 </div>
                                 <div>
                                     <label>Duration</label>
-                                    <input placeholder="e.g. 30 Days" name="duration" type="text" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
+                                    <input value="30 Days" placeholder="e.g. 30 Days" name="duration" type="text" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
                                 </div>
                             </div>
 
                             <label style="margin-top: 10px; display: block;">Precautions / Notes</label>
-                            <textarea placeholder="Any additional notes for the patient..." name="notes" rows="3" style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif; resize: vertical;"></textarea>
+                            <textarea placeholder="Any additional notes for the patient..." name="notes" rows="3" style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif; resize: vertical;">Patient advised to monitor blood sugar levels regularly and avoid high-carb meals.</textarea>
                             
                             <button type="button" onclick="submitPrescription()" class="btn btn-primary" style="margin-top: 15px; width: 100%;">Sign & Upload to IPFS</button>
                         </form>

@@ -76,26 +76,26 @@
                 <div class="prediction-card" style="max-width: 600px;">
                     <form id="patientForm" action="/feature0" method="post" class="prediction-form">
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+                        <input value="Alex Johnson" type="text" id="name" name="name" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
 
                         <label for="age">Age:</label>
-                        <input type="number" id="age" name="age" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+                        <input value="45" type="number" id="age" name="age" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
 
                         <label for="gender">Gender:</label>
-                        <select id="gender" name="gender" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
-                            <option value="Male">Male</option>
+                        <select id="gender" name="gender" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
+                            <option value="Male" selected>Male</option>
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
                         </select>
 
                         <label for="patient_id">Patient ID:</label>
-                        <input type="text" id="patient_id" name="patient_id" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+                        <input value="PT-1042" type="text" id="patient_id" name="patient_id" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
 
                         <label for="record_id">Record ID:</label>
-                        <input type="text" id="record_id" name="record_id" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+                        <input value="REC-8890" type="text" id="record_id" name="record_id" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
 
                         <label for="Disease">Disease:</label>
-                        <input type="text" id="Disease" name="Disease" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+                        <input value="Type 2 Diabetes" type="text" id="Disease" name="Disease" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Outfit', sans-serif;">
 
                         <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit Data</button>
                     </form>
