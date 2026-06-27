@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "express": "^4.21.2",
+    "flask": "^0.2.10",
+    "flask-cors": "^0.0.1",
+    "hbs": "^4.2.0",
+    "mongoose": "^8.9.5",
+    "puppeteer": "^25.2.1",
+    "truffle": "^5.11.5",
+    "web3": "^4.16.0"
+  }
+}

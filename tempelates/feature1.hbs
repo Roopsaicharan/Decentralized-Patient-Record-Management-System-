@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/feature1.css">
+    <title>Disease Prediction</title>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="logo">🏥</span>
+                <h2>MediCore</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="/home" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    Overview
+                </a>
+                <a href="/feature0" class="nav-item">
+                    <span class="nav-icon">📝</span>
+                    Patient Form
+                </a>
+                <a href="/feature1" class="nav-item active">
+                    <span class="nav-icon">🧠</span>
+                    Disease Prediction
+                </a>
+                <a href="/feature2" class="nav-item">
+                    <span class="nav-icon">💊</span>
+                    Treatment Plans
+                </a>
+                <a href="/feature4" class="nav-item">
+                    <span class="nav-icon">🔗</span>
+                    Blockchain Data
+                </a>
+                <a href="/feature5" class="nav-item">
+                    <span class="nav-icon">👨‍⚕️</span>
+                    Doctor Access
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="/" class="nav-item text-danger">
+                    <span class="nav-icon">🚪</span>
+                    Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search patients...">
+                </div>
+                <div class="user-profile">
+                    <div class="avatar">👤</div>
+                    <span>Dr. Admin</span>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-wrapper">
+                <div class="module-header">
+                    <h1>Accurate Disease Prediction</h1>
+                    <p>Select symptoms to run our ML model and predict potential diseases.</p>
+                </div>
+
+                <div class="prediction-card">
+                    <form id="multi-dropdown-form" class="prediction-form">
+                        <label>Symptom Input</label>
+                        
+                        <!-- Six dropdowns -->
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px;">
+                            <select class="symptoms-dropdown" required style="padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+                                <option value="">-- Select a Symptom --</option>
+                            </select>
+                            <select class="symptoms-dropdown" required style="padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+                                <option value="">-- Select a Symptom --</option>
+                            </select>
+                            <select class="symptoms-dropdown" required style="padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+                                <option value="">-- Select a Symptom --</option>
+                            </select>
+                            <select class="symptoms-dropdown" required style="padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+                                <option value="">-- Select a Symptom --</option>
+                            </select>
+                            <select class="symptoms-dropdown" required style="padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+                                <option value="">-- Select a Symptom --</option>
+                            </select>
+                            <select class="symptoms-dropdown" required style="padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+                                <option value="">-- Select a Symptom --</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="padding: 12px 30px; font-size: 1rem;">Run Prediction</button>
+                    </form>
+
+                    <div id="prediction-result" class="prediction-result" style="display: none;">
+                        <h3>Prediction Result</h3>
+                        <div class="result-box">
+                            <span class="alert-icon">⚕️</span>
+                            <span id="disease-name"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const symptomsData = [
+            {"index":0,"Symptom":"itching","weight":1},
+            {"index":1,"Symptom":"skin_rash","weight":2},
+            {"index":2,"Symptom":"nodal_skin_eruptions","weight":3},
+            {"index":3,"Symptom":"continuous_sneezing","weight":4},
+            {"index":4,"Symptom":"shivering","weight":5},
+            {"index":5,"Symptom":"chills","weight":6},
+            {"index":6,"Symptom":"joint_pain","weight":7},
+            {"index":7,"Symptom":"stomach_pain","weight":8},
+            {"index":8,"Symptom":"acidity","weight":9},
+            {"index":9,"Symptom":"ulcers_on_tongue","weight":10},
+            {"index":10,"Symptom":"muscle_wasting","weight":11},
+            {"index":11,"Symptom":"vomiting","weight":12},
+            {"index":12,"Symptom":"burning_micturition","weight":13},
+            {"index":13,"Symptom":"spotting_urination","weight":14},
+            {"index":14,"Symptom":"fatigue","weight":15},
+            {"index":15,"Symptom":"weight_gain","weight":16},
+            {"index":16,"Symptom":"anxiety","weight":17},
+            {"index":17,"Symptom":"cold_hands_and_feets","weight":18},
+            {"index":18,"Symptom":"mood_swings","weight":19},
+            {"index":19,"Symptom":"weight_loss","weight":20},
+            {"index":20,"Symptom":"restlessness","weight":21},
+            {"index":21,"Symptom":"lethargy","weight":22},
+            {"index":22,"Symptom":"patches_in_throat","weight":23},
+            {"index":23,"Symptom":"irregular_sugar_level","weight":24},
+            {"index":24,"Symptom":"cough","weight":25},
+            {"index":25,"Symptom":"high_fever","weight":26},
+            {"index":26,"Symptom":"sunken_eyes","weight":27},
+            {"index":27,"Symptom":"breathlessness","weight":28},
+            {"index":28,"Symptom":"sweating","weight":29},
+            {"index":29,"Symptom":"dehydration","weight":30},
+            {"index":30,"Symptom":"indigestion","weight":31},
+            {"index":31,"Symptom":"headache","weight":32},
+            {"index":32,"Symptom":"yellowish_skin","weight":33},
+            {"index":33,"Symptom":"dark_urine","weight":34},
+            {"index":34,"Symptom":"nausea","weight":35},
+            {"index":35,"Symptom":"loss_of_appetite","weight":36},
+            {"index":36,"Symptom":"pain_behind_the_eyes","weight":37},
+            {"index":37,"Symptom":"back_pain","weight":38},
+            {"index":38,"Symptom":"constipation","weight":39},
+            {"index":39,"Symptom":"abdominal_pain","weight":40},
+            {"index":40,"Symptom":"diarrhoea","weight":41},
+            {"index":41,"Symptom":"mild_fever","weight":42},
+            {"index":42,"Symptom":"yellow_urine","weight":43},
+            {"index":43,"Symptom":"yellowing_of_eyes","weight":44},
+            {"index":44,"Symptom":"acute_liver_failure","weight":45},
+            {"index":45,"Symptom":"fluid_overload","weight":46},
+            {"index":46,"Symptom":"swelling_of_stomach","weight":47},
+            {"index":47,"Symptom":"swelled_lymph_nodes","weight":48},
+            {"index":48,"Symptom":"malaise","weight":49},
+            {"index":49,"Symptom":"blurred_and_distorted_vision","weight":50},
+            {"index":50,"Symptom":"phlegm","weight":51},
+            {"index":51,"Symptom":"throat_irritation","weight":52},
+            {"index":52,"Symptom":"redness_of_eyes","weight":53},
+            {"index":53,"Symptom":"sinus_pressure","weight":54},
+            {"index":54,"Symptom":"runny_nose","weight":55},
+            {"index":55,"Symptom":"congestion","weight":56},
+            {"index":56,"Symptom":"chest_pain","weight":57},
+            {"index":57,"Symptom":"weakness_in_limbs","weight":58},
+            {"index":58,"Symptom":"fast_heart_rate","weight":59},
+            {"index":59,"Symptom":"pain_during_bowel_movements","weight":60},
+            {"index":60,"Symptom":"pain_in_anal_region","weight":61},
+            {"index":61,"Symptom":"bloody_stool","weight":62},
+            {"index":62,"Symptom":"irritation_in_anus","weight":63},
+            {"index":63,"Symptom":"neck_pain","weight":64},
+            {"index":64,"Symptom":"dizziness","weight":65},
+            {"index":65,"Symptom":"cramps","weight":66},
+            {"index":66,"Symptom":"bruising","weight":67},
+            {"index":67,"Symptom":"obesity","weight":68},
+            {"index":68,"Symptom":"swollen_legs","weight":69},
+            {"index":69,"Symptom":"swollen_blood_vessels","weight":70},
+            {"index":70,"Symptom":"puffy_face_and_eyes","weight":71},
+            {"index":71,"Symptom":"enlarged_thyroid","weight":72},
+            {"index":72,"Symptom":"brittle_nails","weight":73},
+            {"index":73,"Symptom":"swollen_extremeties","weight":74},
+            {"index":74,"Symptom":"excessive_hunger","weight":75},
+            {"index":75,"Symptom":"extra_marital_contacts","weight":76},
+            {"index":76,"Symptom":"drying_and_tingling_lips","weight":77},
+            {"index":77,"Symptom":"slurred_speech","weight":78},
+            {"index":78,"Symptom":"knee_pain","weight":79},
+            {"index":79,"Symptom":"hip_joint_pain","weight":80},
+            {"index":80,"Symptom":"muscle_weakness","weight":81},
+            {"index":81,"Symptom":"stiff_neck","weight":82},
+            {"index":82,"Symptom":"swelling_joints","weight":83},
+            {"index":83,"Symptom":"movement_stiffness","weight":84},
+            {"index":84,"Symptom":"spinning_movements","weight":85},
+            {"index":85,"Symptom":"loss_of_balance","weight":86},
+            {"index":86,"Symptom":"unsteadiness","weight":87},
+            {"index":87,"Symptom":"weakness_of_one_body_side","weight":88},
+            {"index":88,"Symptom":"loss_of_smell","weight":89},
+            {"index":89,"Symptom":"bladder_discomfort","weight":90},
+            {"index":90,"Symptom":"foul_smell_of_urine","weight":91},
+            {"index":91,"Symptom":"continuous_feel_of_urine","weight":92},
+            {"index":92,"Symptom":"passage_of_gases","weight":93},
+            {"index":93,"Symptom":"internal_itching","weight":94},
+            {"index":94,"Symptom":"toxic_look_(typhos)","weight":95},
+            {"index":95,"Symptom":"depression","weight":96},
+            {"index":96,"Symptom":"irritability","weight":97},
+            {"index":97,"Symptom":"muscle_pain","weight":98},
+            {"index":98,"Symptom":"altered_sensorium","weight":99},
+            {"index":99,"Symptom":"red_spots_over_body","weight":100},
+            {"index":100,"Symptom":"belly_pain","weight":101},
+            {"index":101,"Symptom":"abnormal_menstruation","weight":102},
+            {"index":102,"Symptom":"dischromic_patches","weight":103},
+            {"index":103,"Symptom":"watering_from_eyes","weight":104},
+            {"index":104,"Symptom":"increased_appetite","weight":105},
+            {"index":105,"Symptom":"polyuria","weight":106},
+            {"index":106,"Symptom":"family_history","weight":107},
+            {"index":107,"Symptom":"mucoid_sputum","weight":108},
+            {"index":108,"Symptom":"rusty_sputum","weight":109},
+            {"index":109,"Symptom":"lack_of_concentration","weight":110},
+            {"index":110,"Symptom":"visual_disturbances","weight":111},
+            {"index":111,"Symptom":"receiving_blood_transfusion","weight":112},
+            {"index":112,"Symptom":"receiving_unsterile_injections","weight":113},
+            {"index":113,"Symptom":"coma","weight":114},
+            {"index":114,"Symptom":"stomach_bleeding","weight":115},
+            {"index":115,"Symptom":"distention_of_abdomen","weight":116},
+            {"index":116,"Symptom":"history_of_alcohol_consumption","weight":117},
+            {"index":117,"Symptom":"fluid_overload","weight":118},
+            {"index":118,"Symptom":"blood_in_sputum","weight":119},
+            {"index":119,"Symptom":"prominent_veins_on_calf","weight":120},
+            {"index":120,"Symptom":"palpitations","weight":121},
+            {"index":121,"Symptom":"painful_walking","weight":122},
+            {"index":122,"Symptom":"pus_filled_pimples","weight":123},
+            {"index":123,"Symptom":"blackheads","weight":124},
+            {"index":124,"Symptom":"scurring","weight":125},
+            {"index":125,"Symptom":"skin_peeling","weight":126},
+            {"index":126,"Symptom":"silver_like_dusting","weight":127},
+            {"index":127,"Symptom":"small_dents_in_nails","weight":128},
+            {"index":128,"Symptom":"inflammatory_nails","weight":129},
+            {"index":129,"Symptom":"blister","weight":130},
+            {"index":130,"Symptom":"red_sore_around_nose","weight":131},
+            {"index":131,"Symptom":"yellow_crust_ooze","weight":132},
+            {"index":132,"Symptom":"Nothing","weight":0},
+        ];
+
+        // Populate each dropdown with the same options
+        const dropdowns = document.querySelectorAll(".symptoms-dropdown");
+        dropdowns.forEach((dropdown) => {
+            symptomsData.forEach((symptom) => {
+                const option = document.createElement("option");
+                option.value = symptom.weight;
+                option.text = symptom.Symptom.replace(/_/g, " ");
+                dropdown.appendChild(option);
+            });
+        });
+
+       // Form submission handling
+    const form = document.getElementById("multi-dropdown-form");
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Initialize an array with 17 elements all set to 0
+        const symptomsArray = Array(17).fill(0);
+
+        // Update the first 6 elements with selected dropdown values
+        Array.from(dropdowns).forEach((dropdown, index) => {
+            symptomsArray[index] = parseInt(dropdown.options[dropdown.selectedIndex].value, 10);
+        });
+
+        // Send the 17-element array to the backend
+        const response = await fetch('http://localhost:5000/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                symptoms: symptomsArray  // Send the complete array
+            })
+        });
+
+       if (response.ok) {
+            const result = await response.json();
+
+            // The backend now returns the disease name
+            const diseaseName = result.prediction;
+
+            // Display the disease name on the webpage
+            const resultElement = document.getElementById("prediction-result");
+            resultElement.style.display = "block";
+            const nameElement = document.getElementById("disease-name");
+            nameElement.textContent = `Predicted Disease: ${diseaseName}`;
+        } else {
+            alert("Prediction failed.");
+        }
+    });
+    </script>
+</body>
+</html>

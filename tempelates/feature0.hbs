@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/home.css">
+  <link rel="stylesheet" href="/feature1.css">
+  <title>Patient Information Form</title>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="logo">🏥</span>
+                <h2>MediCore</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="/home" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    Overview
+                </a>
+                <a href="/feature0" class="nav-item active">
+                    <span class="nav-icon">📝</span>
+                    Patient Form
+                </a>
+                <a href="/feature1" class="nav-item">
+                    <span class="nav-icon">🧠</span>
+                    Disease Prediction
+                </a>
+                <a href="/feature2" class="nav-item">
+                    <span class="nav-icon">💊</span>
+                    Treatment Plans
+                </a>
+                <a href="/feature4" class="nav-item">
+                    <span class="nav-icon">🔗</span>
+                    Blockchain Data
+                </a>
+                <a href="/feature5" class="nav-item">
+                    <span class="nav-icon">👨‍⚕️</span>
+                    Doctor Access
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="/" class="nav-item text-danger">
+                    <span class="nav-icon">🚪</span>
+                    Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search patients...">
+                </div>
+                <div class="user-profile">
+                    <div class="avatar">👤</div>
+                    <span>Dr. Admin</span>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-wrapper">
+                <div class="module-header">
+                    <h1>Patient Information Form</h1>
+                    <p>Register new patient details to the system.</p>
+                </div>
+
+                <div class="prediction-card" style="max-width: 600px;">
+                    <form id="patientForm" action="/feature0" method="post" class="prediction-form">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+
+                        <label for="patient_id">Patient ID:</label>
+                        <input type="text" id="patient_id" name="patient_id" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+
+                        <label for="record_id">Record ID:</label>
+                        <input type="text" id="record_id" name="record_id" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+
+                        <label for="Disease">Disease:</label>
+                        <input type="text" id="Disease" name="Disease" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif;">
+
+                        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit Data</button>
+                    </form>
+                    
+                    <div id="message" style="margin-top: 20px; font-weight: 600; padding: 15px; border-radius: 8px; display: none;"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+    document.getElementById("patientForm").addEventListener("submit", function (e) {
+        e.preventDefault();  // Prevent form from submitting the default way
+        
+        const formData = new FormData(this);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+        
+        fetch('/feature0', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            const messageElement = document.getElementById("message");
+            messageElement.style.display = "block";
+            if (result.success) {
+                messageElement.style.color = "var(--success-color)";
+                messageElement.style.backgroundColor = "#f0fdf4";
+                messageElement.style.border = "1px solid #bbf7d0";
+                messageElement.textContent = result.message;    
+            } else {
+                messageElement.style.color = "var(--danger-color)";
+                messageElement.style.backgroundColor = "#fef2f2";
+                messageElement.style.border = "1px solid #fecaca";
+                messageElement.textContent = result.message;
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+    </script>
+</body>
+</html>

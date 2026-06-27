@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediChain Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="logo">⚕️</span>
+                <h2>MediChain</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">Main Menu</div>
+                <a href="/home" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    System Overview
+                </a>
+                
+                <div class="nav-section">Patient Portal</div>
+                <a href="/feature0" class="nav-item">
+                    <span class="nav-icon">📝</span>
+                    Patient Registration
+                </a>
+                <a href="/feature1" class="nav-item">
+                    <span class="nav-icon">🤖</span>
+                    AI Disease Prediction
+                </a>
+                <a href="/feature5" class="nav-item">
+                    <span class="nav-icon">👨‍⚕️</span>
+                    Assign Doctor
+                </a>
+
+                <div class="nav-section">Medical & Admin</div>
+                <a href="/feature2" class="nav-item">
+                    <span class="nav-icon">📋</span>
+                    Prescription Management
+                </a>
+                <a href="/feature4" class="nav-item">
+                    <span class="nav-icon">🔗</span>
+                    Blockchain Verification
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="/" class="nav-item text-danger">
+                    <span class="nav-icon">🚪</span>
+                    Secure Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search patient ID or blockchain hash...">
+                </div>
+                <div class="user-profile">
+                    <div class="network-badge">
+                        <span class="pulse-dot"></span> Sepolia Network
+                    </div>
+                    <div class="avatar">U</div>
+                    <span>Auth User</span>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-wrapper">
+                <div class="welcome-header">
+                    <h1>Healthcare Monitoring System</h1>
+                    <p>Decentralized, secure, and intelligent patient record management.</p>
+                </div>
+
+                <!-- Quick Stats Row -->
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="stat-icon stat-blue">👥</div>
+                        <div class="stat-info">
+                            <span class="stat-value">1,248</span>
+                            <span class="stat-label">Registered Patients</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon stat-indigo">🔗</div>
+                        <div class="stat-info">
+                            <span class="stat-value">856</span>
+                            <span class="stat-label">Blocks Mined</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon stat-purple">🤖</div>
+                        <div class="stat-info">
+                            <span class="stat-value">432</span>
+                            <span class="stat-label">AI Predictions</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon stat-cyan">ipfs</div>
+                        <div class="stat-info">
+                            <span class="stat-value">99.9%</span>
+                            <span class="stat-label">IPFS Uptime</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Layout -->
+                <div class="tables-grid">
+                    <!-- Recent Blockchain Activity Table -->
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h2>Recent Smart Contract Activity</h2>
+                            <span class="badge badge-blue">Live Sync</span>
+                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Transaction Hash</th>
+                                    <th>Type</th>
+                                    <th>Patient ID</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="id-cell">0x7f8...3a9</td>
+                                    <td>Record Added</td>
+                                    <td>#PT-1042</td>
+                                    <td><span class="status status-verified">Verified</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="id-cell">0x1b4...9f2</td>
+                                    <td>Doctor Assigned</td>
+                                    <td>#PT-1043</td>
+                                    <td><span class="status status-verified">Verified</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="id-cell">0x9c2...1e8</td>
+                                    <td>Prescription IPFS</td>
+                                    <td>#PT-1044</td>
+                                    <td><span class="status status-pending">Pending...</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="id-cell">0x3a5...7d1</td>
+                                    <td>Record Added</td>
+                                    <td>#PT-1045</td>
+                                    <td><span class="status status-verified">Verified</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="id-cell">0x8f1...4c6</td>
+                                    <td>Doctor Assigned</td>
+                                    <td>#PT-1046</td>
+                                    <td><span class="status status-verified">Verified</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- System Status Panel -->
+                    <div class="table-card system-card">
+                        <div class="table-header">
+                            <h2>Infrastructure Status</h2>
+                        </div>
+                        <ul class="system-list">
+                            <li class="system-item">
+                                <div class="sys-icon bg-ethereum">Ξ</div>
+                                <div class="sys-info">
+                                    <span class="sys-title">Ethereum Node (Ganache)</span>
+                                    <span class="sys-meta">Connected to HTTP://127.0.0.1:7545</span>
+                                </div>
+                                <span class="sys-status active">Online</span>
+                            </li>
+                            <li class="system-item">
+                                <div class="sys-icon bg-ipfs">📦</div>
+                                <div class="sys-info">
+                                    <span class="sys-title">IPFS Decentralized Storage</span>
+                                    <span class="sys-meta">Active peers: 42</span>
+                                </div>
+                                <span class="sys-status active">Online</span>
+                            </li>
+                            <li class="system-item">
+                                <div class="sys-icon bg-ml">🧠</div>
+                                <div class="sys-info">
+                                    <span class="sys-title">Flask ML Prediction API</span>
+                                    <span class="sys-meta">Random Forest Classifier v1.2</span>
+                                </div>
+                                <span class="sys-status active">Online</span>
+                            </li>
+                            <li class="system-item">
+                                <div class="sys-icon bg-mongo">🍃</div>
+                                <div class="sys-info">
+                                    <span class="sys-title">MongoDB Database</span>
+                                    <span class="sys-meta">Primary cluster connected</span>
+                                </div>
+                                <span class="sys-status active">Online</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
