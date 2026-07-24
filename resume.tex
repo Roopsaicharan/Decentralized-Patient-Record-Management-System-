@@ -1,0 +1,182 @@
+%-------------------------
+% Resume in Latex
+% Author : Roop Sai Charan
+%------------------------
+
+\documentclass[letterpaper,9pt]{extarticle}
+
+% Set font to Times New Roman
+\usepackage{mathptmx} 
+
+\usepackage{latexsym}
+% Using the geometry package for safe, tight margins. This prevents the blank first page.
+\usepackage[margin=0.4in]{geometry} 
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Safer section spacing to prevent title overlaps
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{1pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{1pt}\item
+    \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{\small#1} & #2 \\ 
+    \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-6pt}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, topsep=2pt, itemsep=1pt, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Roop Sai Charan Kothamasu} \\ \vspace{2pt}
+    \small
+    +1-352-721-6208 $|$
+    \href{mailto:roopsai2003@gmail.com}{roopsai2003@gmail.com} $|$
+    \href{https://github.com/Roopsaicharan}{github.com/Roopsaicharan} $|$
+    \href{https://www.linkedin.com/in/roop-sai-charan-kothamasu-85062b24b/}{linkedin.com/in/roop-sai-charan-kothamasu}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Florida}{Gainesville, FL}
+      {Master of Science in Computer Science}{Aug 2025 -- Aug 2027}
+    \resumeSubheading
+      {SRM University}{Andhra Pradesh, India}
+      {Bachelor of Technology in Computer Science}{Mar 2021 -- Mar 2025}
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{TECHNICAL SKILLS}
+ \vspace{2pt}
+  \begin{itemize}[leftmargin=0.15in, label={}, nosep]
+    \small{\item{
+      \textbf{Languages:} Python, JavaScript, Java, C, C++, SQL, Solidity \\
+      \textbf{AI \& Machine Learning:} Generative AI (LLMs, RAG), LangChain, OpenAI API, TensorFlow, PyTorch, Hugging Face, Scikit-learn \\
+      \textbf{Front-end Technologies:} React.js, Next.js, HTML5, CSS3, Tailwind CSS, Bootstrap \\
+      \textbf{Back-end Technologies:} Node.js, Express.js, REST APIs, MongoDB, PostgreSQL, Pinecone (Vector DB) \\
+      \textbf{Cloud and DevOps:} AWS (EC2, CloudWatch, S3), CI/CD, Docker, Git, Linux/UNIX \\
+      \textbf{Data Science Tools:} Pandas, NumPy, Matplotlib, OpenCV, Jupyter Notebook \\
+      \textbf{Development Tools:} GitHub, VS Code, Google Colab, Postman, Agile/Scrum
+    }}
+  \end{itemize}
+ \vspace{-4pt}
+
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Self-Study under Ivan Ruchikin}{Remote}
+      {Autonomous Vehicle Systems Research}{2023 -- Present}
+      \resumeItemListStart
+        \resumeItem{Conducted comprehensive self-directed research on autonomous vehicle systems under the mentorship of Ivan Ruchikin.}
+        \resumeItem{Explored advanced concepts in self-driving technologies, focusing on sensor fusion, path planning, and autonomous navigation control systems.}
+        \resumeItem{Analyzed state-of-the-art algorithms for autonomous vehicles to understand their practical implementations and safety critical aspects in real-world environments.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {SRM University AP}{Andhra Pradesh, India}
+      {Special Project Intern -- Blockchain Research}{Dec 2024 -- Mar 2025}
+      \resumeItemListStart
+        \resumeItem{Designed and deployed Solidity smart contracts on Ethereum for tamper-proof patient data storage, integrating Node.js REST APIs and MongoDB for off-chain data management across 500+ simulated users.}
+        \resumeItem{Implemented JWT-based role access control for 3 distinct user roles, eliminating unauthorized access entirely and ensuring 99.9\% data integrity throughout the system.}
+        \resumeItem{Collaborated directly with supervising professor to iterate on system architecture, rapidly adapting to blockchain concepts and delivering a fully functional prototype within a 3-month timeline, contributing to an ongoing publication and patent filing.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {APSSDC}{Remote}
+      {AWS Cloud Computing Intern}{Jun 2023 -- Aug 2023}
+      \resumeItemListStart
+        \resumeItem{Launched scalable web applications on AWS EC2 with automated monitoring, improving system uptime by 55\% and reducing downtime incidents by 40\%.}
+        \resumeItem{Engineered CI/CD pipelines using AWS CodePipeline and GitHub Actions, reducing manual deployment time by 70\% and accelerating release cycles from 5 days to 1.5 days.}
+        \resumeItem{Optimized resource allocation across 12+ EC2 instances using CloudWatch analytics, decreasing infrastructure costs by 25\% while maintaining 99.9\% availability.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {SRM University AP}{Andhra Pradesh, India}
+      {Machine Learning Research Intern}{Jan 2022 -- Mar 2022}
+      \resumeItemListStart
+        \resumeItem{Developed end-to-end ML pipelines processing 15,000+ records with 95\% accuracy using Python, Pandas, and Scikit-learn.}
+        \resumeItem{Implemented ensemble learning techniques (Random Forest, XGBoost) improving prediction stability by 85\% and F1-score from 0.72 to 0.89.}
+        \resumeItem{Conducted model evaluation using cross-validation, achieving ROC-AUC of 0.92+ across 6 different ML algorithms.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading{\textbf{MeetMint: AI-Powered Productivity Dashboard} $|$ \emph{Go, React, Gemini 1.5 Flash, RAG, SQLite}}{ March 2026 -- May 2026}
+      \resumeItemListStart
+        \resumeItem{Architected a full-stack AI dashboard using Go and React to transform meeting audio into structured project metadata, leveraging Gemini 1.5 Flash for low-latency transcription analysis and task extraction.}
+        \resumeItem{Engineered a local Retrieval-Augmented Generation (RAG) pipeline using SQLite and embeddings, enabling context-aware Q\&A over meeting history with support for manual transcript refinement.}
+        \resumeItem{Developed a premium Glassmorphism UI with Framer Motion and secure multimedia BLOB storage, maintaining a robust test suite of 35+ backend and integration tests.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading{\textbf{Decentralized Patient Record Management System} $|$ \emph{Node.js, MongoDB, Solidity, Ethereum}}{Dec 2024 -- Mar 2025}
+      \resumeItemListStart
+        \resumeItem{Architected blockchain-based healthcare platform using Solidity smart contracts and Node.js REST APIs, enabling secure management for 500+ simulated users with 99.9\% data integrity.}
+        \resumeItem{Enforced granular permission management across doctor, patient, and admin roles using JWT authentication, achieving full compliance with healthcare data privacy standards.}
+        \resumeItem{Released Ethereum smart contracts with audit logging, decreasing manual verification by 40\% through immutable transaction records.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading{\textbf{AI-Powered Game Room Chatbot} $|$ \emph{Python, LangChain, OpenAI API, Hugging Face, Pinecone}}{May 2026 -- Jul 2026}
+      \resumeItemListStart
+        \resumeItem{Designed and deployed an intelligent Discord chatbot utilizing Python and LangChain to provide context-aware gaming assistance and dynamic community engagement.}
+        \resumeItem{Integrated OpenAI API and Hugging Face transformers for advanced Natural Language Processing, enabling real-time chat moderation, toxicity filtering, and conversational interactions.}
+        \resumeItem{Engineered a Retrieval-Augmented Generation (RAG) pipeline using Pinecone vector database to instantly retrieve game stats, lore, and personalized player recommendations, boosting daily user engagement.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------
+\section{PUBLICATIONS}
+  \resumeSubHeadingListStart
+    \resumeItem{R.S. Charan et al. (2024). \href{https://doi.org/10.1109/ICEEICT61591.2024.10718516}{\textit{Analyzing Lossless Image Compression Techniques for IoT Devices}}, ICEEICT 2024.}
+    \resumeItem{R.S. Charan et al. (2024). \href{https://doi.org/10.1109/ICAECT63952.2025.10958911}{\textit{An Explainable AI Driven Hybrid Model for Enhanced Intrusion Detection in Network Security}}.}
+    \resumeItem{R.S. Charan et al. (2024). \textit{Decentralized Patient Record Management System} --- Publication and patent under process.}
+  \resumeSubHeadingListEnd
+
+\end{document}
